@@ -169,15 +169,17 @@ const ChatbotWidget = () => {
           >
             {/* Main Button */}
             <div className="relative w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full border-2 border-yellow-400/60 shadow-xl hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300" style={{ animation: 'bounce 3s infinite' }}>
-              {/* Icon and AI text */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-xs text-yellow-400 font-semibold mt-0.5">AI</span>
+              {/* Chat bubble with AI text inside */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative">
+                  <MessageCircle className="w-8 h-8 text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="absolute inset-0 flex items-center justify-center text-[10px] text-slate-900 font-bold mt-0.5">AI</span>
+                </div>
               </div>
             </div>
           </button>
           {/* Description text */}
-          <span className="text-xs text-white/70 mt-2 whitespace-nowrap">Thien Zhi AI</span>
+          <span className="text-xs text-yellow-400 mt-2 whitespace-nowrap font-medium" style={{ animation: 'bounce 3s infinite' }}>Thien Zhi AI</span>
         </div>
       )}
 

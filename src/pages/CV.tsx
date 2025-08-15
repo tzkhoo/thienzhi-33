@@ -26,6 +26,9 @@ const CV = () => {
                 src="/ThienZhi_CV.pdf"
                 className="w-full h-full"
                 title="Thien Zhi KHOO - CV"
+                onError={() => {
+                  console.error('Failed to load PDF from /ThienZhi_CV.pdf');
+                }}
               />
             </div>
             
