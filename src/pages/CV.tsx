@@ -22,14 +22,30 @@ const CV = () => {
             </div>
             
             <div className="relative w-full h-[80vh]">
-              <iframe
-                src="/ThienZhi_CV.pdf"
+              <object
+                data="/ThienZhi_CV.pdf"
+                type="application/pdf"
                 className="w-full h-full"
                 title="Thien Zhi KHOO - CV"
-                onError={() => {
-                  console.error('Failed to load PDF from /ThienZhi_CV.pdf');
-                }}
-              />
+              >
+                <embed
+                  src="/ThienZhi_CV.pdf"
+                  type="application/pdf"
+                  className="w-full h-full"
+                />
+                <div className="flex items-center justify-center h-full bg-slate-800/50 text-white">
+                  <div className="text-center">
+                    <p className="mb-4">PDF cannot be displayed in this browser.</p>
+                    <a 
+                      href="/ThienZhi_CV.pdf" 
+                      download="ThienZhi_KHOO_CV.pdf"
+                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-primary/25"
+                    >
+                      Download CV Instead
+                    </a>
+                  </div>
+                </div>
+              </object>
             </div>
             
             <div className="p-6 border-t border-slate-700/50 text-center">
