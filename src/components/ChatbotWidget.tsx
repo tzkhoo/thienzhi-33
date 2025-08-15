@@ -161,7 +161,7 @@ const ChatbotWidget = () => {
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center">
           <button
             onClick={() => setIsOpen(true)}
             className="relative group"
@@ -169,12 +169,15 @@ const ChatbotWidget = () => {
           >
             {/* Main Button */}
             <div className="relative w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full border-2 border-yellow-400/60 shadow-xl hover:shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300" style={{ animation: 'bounce 3s infinite' }}>
-              {/* Icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <MessageCircle className="w-8 h-8 text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
+              {/* Icon and AI text */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <MessageCircle className="w-6 h-6 text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-xs text-yellow-400 font-semibold mt-0.5">AI</span>
               </div>
             </div>
           </button>
+          {/* Description text */}
+          <span className="text-xs text-white/70 mt-2 whitespace-nowrap">Thien Zhi AI</span>
         </div>
       )}
 
@@ -268,6 +271,7 @@ const ChatbotWidget = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3 flex-1">
                   <span className="hidden md:block text-sm text-gray-400 whitespace-nowrap">Suggested Prompts:</span>
+                  <span className="md:hidden text-sm text-gray-400 whitespace-nowrap">Suggestions:</span>
                   <div className="flex gap-2">
                     {currentSuggestions.map((suggestion, index) => (
                       <button
