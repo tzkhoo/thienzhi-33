@@ -102,6 +102,7 @@ const ChatbotWidget = () => {
     setIsLoading(true);
     
     try {
+      console.log('Sending message to webhook:', currentMessage);
       const response = await fetch('https://wonder4.app.n8n.cloud/webhook/ad30832c-1f6b-4293-8eec-85490817e62d', {
         method: 'POST',
         headers: {
@@ -112,7 +113,14 @@ const ChatbotWidget = () => {
         })
       });
       
+      console.log('Webhook response status:', response.status);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      console.log('Webhook response data:', data);
       
       const botResponse = {
         id: messages.length + 2,
