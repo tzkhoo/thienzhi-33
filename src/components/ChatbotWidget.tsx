@@ -102,7 +102,7 @@ const ChatbotWidget = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://wonder4.app.n8n.cloud/webhook-test/ad30832c-1f6b-4293-8eec-85490817e62d', {
+      const response = await fetch('https://wonder4.app.n8n.cloud/webhook/ad30832c-1f6b-4293-8eec-85490817e62d', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
