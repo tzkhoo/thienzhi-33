@@ -132,6 +132,11 @@ const ChatbotWidget = () => {
       setMessages(prev => [...prev, botResponse]);
     } catch (error) {
       console.error('Error calling webhook:', error);
+      console.error('Error details:', {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        type: typeof error,
+        stack: error instanceof Error ? error.stack : undefined
+      });
       const errorResponse = {
         id: messages.length + 2,
         text: "Sorry, I'm having trouble connecting right now. Please try again later.",
